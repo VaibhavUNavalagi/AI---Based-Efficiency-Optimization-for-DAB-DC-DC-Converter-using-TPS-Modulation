@@ -73,6 +73,72 @@ for episode in range(episodes):
 np.save('q_table.npy', Q)
 ```
 
+2. **Sample Code Snippet**  
+dashboard.py (core snippet):
+```bash
+import pandas as pd
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+
+# Load sample data
+data = pd.read_csv('data/sample_data.csv')
+
+# Example visualization
+plt.figure(figsize=(10,5))
+plt.plot(data['Time'], data['Value'], label='Metric')
+plt.xlabel('Time')
+plt.ylabel('Value')
+plt.title('Sample Metric Over Time')
+plt.legend()
+plt.show()
+```
+sample-dashboard.html (snippet):
+```bash
+<!-- DAB Converter TPS Optimization Dashboard Snippet -->
+<!-- filepath: c:\Users\vaibh\OneDrive\Desktop\VS Code\IDP\sample_dashboard.html -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+<script>
+class DABConverter {
+    constructor(V1, V2, Lk, fs, n, Pnom) {
+        this.V1 = V1;
+        this.V2 = V2;
+        this.Lk = Lk * 1e-6;
+        this.fs = fs * 1e3;
+        this.n = n;
+        this.Pnom = Pnom;
+        this.dt_max = 0.5;
+        this.Ts = 1 / this.fs;
+        this.k = V2 / V1;
+        this.Zbase = 8 * this.fs * this.Lk;
+        this.Pbase = (this.V1 ** 2) / this.Zbase;
+    }
+    calculatePower(D1, D2, D3) {
+        D1 = Math.max(-this.dt_max, Math.min(this.dt_max, D1));
+        D2 = Math.max(0, Math.min(this.dt_max, D2));
+        D3 = Math.max(0, Math.min(this.dt_max, D3));
+        // ...power calculation logic...
+        const normalized_power = this.k * D1; // simplified
+        const p_actual = normalized_power * this.Pbase;
+        return { normalized: normalized_power, actual: p_actual };
+    }
+}
+
+// Example: Plotly chart for Power Tracking
+Plotly.newPlot('powerChart', [{
+    x: [0, 1, 2, 3, 4],
+    y: [100, 200, 300, 400, 500],
+    type: 'scatter',
+    mode: 'lines+markers',
+    name: 'Power (W)'
+}], {
+    title: 'Power Tracking',
+    xaxis: { title: 'Episode' },
+    yaxis: { title: 'Power (W)' }
+});
+</script>
+<div id="powerChart" style="width:100%;height:400px;"></div>
+```
+
 
 
 
