@@ -14,3 +14,19 @@ This project leverages **Q-Learning**, a reinforcement learning technique, to op
 - Adaptive TPS modulation for efficiency optimization.
 - Real-time simulation and performance monitoring.
 
+## 🔹 Installation and build
+
+1. **Install dependencies:**  
+
+```bash
+# Install numpy
+pip install numpy
+
+# Install matplotlib
+pip install matplotlib
+
+# Install pandas
+pip install pandas
+
+# Install tqdm
+pip install tqdm
