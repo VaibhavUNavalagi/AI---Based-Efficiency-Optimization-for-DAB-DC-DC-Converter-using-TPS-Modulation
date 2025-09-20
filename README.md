@@ -32,11 +32,48 @@ pip install pandas
 pip install tqdm
 ```
 
-1. **Running the Project:**  
+2. **Running the Project:**  
 Run the main Python file:
 ```bash
-python dab_efficiency_optimization.py
+python q-learning-algo.py
 ```
+
+3. **Sample Code Snippet:**  
+Below is a simplified version of the core Q-Learning loop used in this project:
+```bash
+import numpy as np
+
+# Initialize Q-Table
+state_size = 100
+action_size = 5
+Q = np.zeros((state_size, action_size))
+
+# Q-Learning parameters
+learning_rate = 0.01
+discount_factor = 0.9
+epsilon = 0.1
+episodes = 1000
+
+for episode in range(episodes):
+    state = env.reset()
+    done = False
+
+    while not done:
+        # ε-greedy action selection
+        action = np.random.randint(action_size) if np.random.rand() < epsilon else np.argmax(Q[state])
+        
+        # Take action and observe reward
+        next_state, reward, done = env.step(action)
+        
+        # Update Q-Table
+        Q[state, action] += learning_rate * (reward + discount_factor * np.max(Q[next_state]) - Q[state, action])
+        state = next_state
+
+# Save Q-Table
+np.save('q_table.npy', Q)
+```
+
+
 
 
 
