@@ -30,3 +30,14 @@ pip install pandas
 
 # Install tqdm
 pip install tqdm
+```
+
+1. **Running the Project:**  
+Run the main Python file:
+```bash
+python dab_efficiency_optimization.py
+```
+
+
+
+
