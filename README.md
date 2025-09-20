@@ -138,6 +138,24 @@ Plotly.newPlot('powerChart', [{
 </script>
 <div id="powerChart" style="width:100%;height:400px;"></div>
 ```
+## 🏁 Dashboard
+<img width="1809" height="714" alt="Image" src="https://github.com/user-attachments/assets/763db87d-dee9-40d7-bea2-b400a38cc855" />
+<img width="1769" height="559" alt="Image" src="https://github.com/user-attachments/assets/34219646-5b13-426a-9173-09a84f551784" />
+
+## 🏁 Conclusion
+
+- The Q-Learning-based TPS modulation successfully optimized the **DAB DC-DC converter** efficiency.  
+- Achieved **99.6% power tracking accuracy** and **15.2% RMS current reduction**.  
+- Demonstrated robust performance under varying load and operating conditions.
+
+---
+
+## 🔮 Future Work
+
+- Integrate **real-time hardware-in-the-loop (HIL) testing** for physical converters.  
+- Extend the model to **multi-objective optimization** including thermal and voltage stress.  
+- Explore **deep reinforcement learning** methods for faster convergence and higher adaptability.  
+- Develop a **web-based dashboard** to monitor converter performance dynamically.  
 
 
 
