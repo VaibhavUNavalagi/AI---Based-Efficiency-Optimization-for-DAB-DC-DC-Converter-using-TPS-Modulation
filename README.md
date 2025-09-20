@@ -138,7 +138,7 @@ Plotly.newPlot('powerChart', [{
 </script>
 <div id="powerChart" style="width:100%;height:400px;"></div>
 ```
-## 🏁 Dashboard
+## Dashboard
 <img width="1809" height="714" alt="Image" src="https://github.com/user-attachments/assets/763db87d-dee9-40d7-bea2-b400a38cc855" />
 <img width="1769" height="559" alt="Image" src="https://github.com/user-attachments/assets/34219646-5b13-426a-9173-09a84f551784" />
 
